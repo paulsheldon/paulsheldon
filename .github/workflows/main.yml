@@ -14,4 +14,11 @@ jobs:
     steps:
       - uses: lowlighter/metrics@latest
         with:
-          token: ${{ secrets.METRICS_TOKEN }}
+          template: repository
+          filename: metrics.repository.svg
+          token: ${{ secrets.METRICS_TOKEN_WITH_SCOPES }}
+          user: PAULSHELDON
+          repo: metrics
+          plugin_lines: yes
+          plugin_followup: yes
+          
