@@ -1,4 +1,6 @@
-![Metrics](/github-metrics.svg)
+![Metrics](/metrics.base.svg)
+
+![Metrics](/metrics.plugin.calendar.full.svg)
 
 ![Metrics](/metrics.plugin.languages.indepth.svg)
 
