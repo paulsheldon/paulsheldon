@@ -48,3 +48,37 @@ jobs:
           base: ""
           plugin_calendar: yes
           plugin_calendar_limit: 2
+      - uses: lowlighter/metrics@latest
+        with:
+          filename: metrics.plugin.habits.charts.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          plugin_habits: yes
+          plugin_habits_facts: no
+          plugin_habits_charts: yes
+      - uses: lowlighter/metrics@latest
+        with:
+          filename: metrics.plugin.reactions.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          plugin_reactions: yes
+          plugin_reactions_limit: 100
+          plugin_reactions_details: percentage
+      - uses: lowlighter/metrics@latest
+        with:
+          filename: metrics.plugin.sponsors.full.svg
+          token: ${{ secrets.METRICS_TOKEN_WITH_SCOPES }}
+          base: ""
+          plugin_sponsors: yes
+      - uses: lowlighter/metrics@latest
+        with:
+          filename: metrics.plugin.support.svg
+          token: NOT_NEEDED
+          base: ""
+          plugin_support: yes
+      - uses: lowlighter/metrics@latest
+        with:
+          filename: metrics.plugin.traffic.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: repositories
+          plugin_traffic: yes
