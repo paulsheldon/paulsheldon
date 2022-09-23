@@ -1,5 +1,7 @@
 ![Metrics](/metrics.base.svg)
 
+![Metrics](/metrics.plugin.sponsors.full.svg)
+
 ![Metrics](/metrics.plugin.habits.charts.svg)
 
 ![Metrics](/metrics.plugin.languages.indepth.svg)
