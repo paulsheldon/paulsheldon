@@ -21,24 +21,25 @@
                         <rect x="0" y="0" width="460" height="8" fill="white" rx="5"/>
                     </mask>
                     <rect mask="url(#languages-bar)" x="0" y="0" width="0" height="8" fill="#d1d5da"/>
-                    <rect mask="url(#languages-bar)" x="0" y="0" width="320.78455190408255" height="8" fill="red"/>
-                    <rect mask="url(#languages-bar)" x="320.78455190408255" y="0" width="96.60632162100941" height="8" fill="blue"/>
-                    <rect mask="url(#languages-bar)" x="417.390873525092" y="0" width="31.737610346670674" height="8" fill="#c6538c"/>
-                    <rect mask="url(#languages-bar)" x="449.1284838717626" y="0" width="7.7221536058238005" height="8" fill="#4298b8"/>
-                    <rect mask="url(#languages-bar)" x="456.8506374775865" y="0" width="3.149362522413576" height="8" fill="#244776"/>
+                    <rect mask="url(#languages-bar)" x="0" y="0" width="212.17539574565953" height="8" fill="blue"/>
+                    <rect mask="url(#languages-bar)" x="212.17539574565953" y="0" width="165.50887921853732" height="8" fill="red"/>
+                    <rect mask="url(#languages-bar)" x="377.6842749641968" y="0" width="65.86534120747" height="8" fill="#c6538c"/>
+                    <rect mask="url(#languages-bar)" x="443.5496161716668" y="0" width="16.093604498999696" height="8" fill="#4298b8"/>
+                    <rect mask="url(#languages-bar)" x="459.6432206706665" y="0" width="0.19086830816960446" height="8" fill="#a53b70"/>
+                    <rect mask="url(#languages-bar)" x="459.8340889788361" y="0" width="0.1659110211638749" height="8" fill="#d67711"/>
                 </svg>
                 <div class="row fill-width">
                     <section>
                         <div class="field language details">
                             <div class="field">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-                                    <path fill="red" fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8z"/>
+                                    <path fill="blue" fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8z"/>
                                 </svg>
-                                JavaScript
+                                PHP
                             </div>
                             <small>
-                                <div>8.52 MB</div>
-                                <div>69.74%</div>
+                                <div>2.70 MB</div>
+                                <div>46.13%</div>
                             </small>
                         </div>
                         <div class="field language details">
@@ -49,20 +50,20 @@
                                 SCSS
                             </div>
                             <small>
-                                <div>842 kB</div>
-                                <div>6.9%</div>
+                                <div>839 kB</div>
+                                <div>14.32%</div>
                             </small>
                         </div>
                         <div class="field language details">
                             <div class="field">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-                                    <path fill="#244776" fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8z"/>
+                                    <path fill="#a53b70" fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8z"/>
                                 </svg>
-                                CoffeeScript
+                                Sass
                             </div>
                             <small>
-                                <div>83.6 kB</div>
-                                <div>0.68%</div>
+                                <div>2.43 kB</div>
+                                <div>0.04%</div>
                             </small>
                         </div>
                     </section>
@@ -70,13 +71,13 @@
                         <div class="field language details">
                             <div class="field">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-                                    <path fill="blue" fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8z"/>
+                                    <path fill="red" fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8z"/>
                                 </svg>
-                                PHP
+                                JavaScript
                             </div>
                             <small>
-                                <div>2.57 MB</div>
-                                <div>21%</div>
+                                <div>2.11 MB</div>
+                                <div>35.98%</div>
                             </small>
                         </div>
                         <div class="field language details">
@@ -88,7 +89,19 @@
                             </div>
                             <small>
                                 <div>205 kB</div>
-                                <div>1.68%</div>
+                                <div>3.5%</div>
+                            </small>
+                        </div>
+                        <div class="field language details">
+                            <div class="field">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+                                    <path fill="#d67711" fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8z"/>
+                                </svg>
+                                Zimpl
+                            </div>
+                            <small>
+                                <div>2.11 kB</div>
+                                <div>0.04%</div>
                             </small>
                         </div>
                     </section>
