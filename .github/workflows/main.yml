@@ -22,7 +22,7 @@ jobs:
           config_timezone: America/New_York
           config_order: base.header, base.activity+community, base.repositories
 
-      # Detailed language statistics with recent activity
+      # Detailed language statistics
       - uses: lowlighter/metrics@latest
         with:
           filename: metrics.plugin.languages.svg
@@ -37,16 +37,6 @@ jobs:
           plugin_languages_colors: github
           plugin_languages_threshold: 0%
           plugin_languages_analysis_timeout: 60
-
-      # Achievements - compact view (more reliable)
-      - uses: lowlighter/metrics@latest
-        with:
-          filename: metrics.plugin.achievements.svg
-          token: ${{ secrets.METRICS_TOKEN }}
-          base: ""
-          plugin_achievements: yes
-          plugin_achievements_display: compact
-          plugin_achievements_threshold: C
 
       # Activity calendar - full year view
       - uses: lowlighter/metrics@latest
@@ -144,8 +134,44 @@ jobs:
           plugin_people_size: 28
           plugin_people_identicons: no
 
-      # WakaTime coding stats (optional - requires WakaTime API key)
-      # Uncomment if you have WakaTime set up
+      # GitHub Skyline (3D contribution graph) - Alternative to achievements
+      - uses: lowlighter/metrics@latest
+        with:
+          filename: metrics.plugin.skyline.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          plugin_skyline: yes
+          plugin_skyline_year: current-year
+          plugin_skyline_frames: 60
+          plugin_skyline_quality: 0.5
+
+      # Repositories with most activity
+      - uses: lowlighter/metrics@latest
+        with:
+          filename: metrics.plugin.repositories.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          plugin_repositories: yes
+          plugin_repositories_featured: paulsheldon/uTrakRepair
+
+      # Follow-up issues and PRs
+      - uses: lowlighter/metrics@latest
+        with:
+          filename: metrics.plugin.followup.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          plugin_followup: yes
+          plugin_followup_sections: repositories
+
+      # Pagespeed insights (if you have a website)
+      # - uses: lowlighter/metrics@latest
+      #   with:
+      #     filename: metrics.plugin.pagespeed.svg
+      #     token: NOT_NEEDED
+      #     plugin_pagespeed: yes
+      #     plugin_pagespeed_url: https://your-website.com
+
+      # WakaTime coding stats (requires WakaTime API key)
       # - uses: lowlighter/metrics@latest
       #   with:
       #     filename: metrics.plugin.wakatime.svg
