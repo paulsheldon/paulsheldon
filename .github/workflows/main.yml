@@ -32,24 +32,21 @@ jobs:
           plugin_languages_ignored: html, css, tex, less, dockerfile, makefile, qmake, lex, cmake, shell, xml, json, yaml
           plugin_languages_indepth: yes
           plugin_languages_details: lines, bytes-size, percentage
-          plugin_languages_sections: most-used, recently-used
-          plugin_languages_limit: 12
-          plugin_languages_recent_load: 500
-          plugin_languages_recent_days: 30
+          plugin_languages_sections: most-used
+          plugin_languages_limit: 8
           plugin_languages_colors: github
-          plugin_languages_threshold: 0.5%
+          plugin_languages_threshold: 0%
           plugin_languages_analysis_timeout: 60
 
-      # Achievements - detailed view
+      # Achievements - compact view (more reliable)
       - uses: lowlighter/metrics@latest
         with:
           filename: metrics.plugin.achievements.svg
           token: ${{ secrets.METRICS_TOKEN }}
           base: ""
           plugin_achievements: yes
-          plugin_achievements_display: detailed
-          plugin_achievements_secrets: yes
-          plugin_achievements_threshold: B
+          plugin_achievements_display: compact
+          plugin_achievements_threshold: C
 
       # Activity calendar - full year view
       - uses: lowlighter/metrics@latest
@@ -69,19 +66,18 @@ jobs:
           plugin_isocalendar: yes
           plugin_isocalendar_duration: full-year
 
-      # Coding habits and recent activity
+      # Coding habits - simplified for reliability
       - uses: lowlighter/metrics@latest
         with:
           filename: metrics.plugin.habits.svg
           token: ${{ secrets.METRICS_TOKEN }}
           base: ""
           plugin_habits: yes
-          plugin_habits_from: 500
-          plugin_habits_days: 30
+          plugin_habits_from: 200
+          plugin_habits_days: 14
           plugin_habits_facts: yes
           plugin_habits_charts: yes
-          plugin_habits_charts_type: classic
-          plugin_habits_trim: yes
+          plugin_habits_trim: no
           config_timezone: America/New_York
 
       # Notable contributions
@@ -91,21 +87,8 @@ jobs:
           token: ${{ secrets.METRICS_TOKEN }}
           base: ""
           plugin_notable: yes
-          plugin_notable_from: all
+          plugin_notable_from: organization
           plugin_notable_repositories: yes
-          plugin_notable_indepth: yes
-
-      # Code snippet showcase
-      - uses: lowlighter/metrics@latest
-        with:
-          filename: metrics.plugin.code.svg
-          token: ${{ secrets.METRICS_TOKEN }}
-          base: ""
-          plugin_code: yes
-          plugin_code_lines: 12
-          plugin_code_load: 500
-          plugin_code_days: 7
-          plugin_code_visibility: public
 
       # Lines of code changed
       - uses: lowlighter/metrics@latest
@@ -114,22 +97,8 @@ jobs:
           token: ${{ secrets.METRICS_TOKEN }}
           base: ""
           plugin_lines: yes
-          plugin_lines_sections: repositories, history
-          plugin_lines_repositories_limit: 10
-          plugin_lines_history_limit: 2
-
-      # Star history and topics
-      - uses: lowlighter/metrics@latest
-        with:
-          filename: metrics.plugin.starlists.svg
-          token: ${{ secrets.METRICS_TOKEN }}
-          base: ""
-          plugin_starlists: yes
-          plugin_starlists_limit: 3
-          plugin_starlists_limit_repositories: 4
-          plugin_starlists_languages: yes
-          plugin_starlists_limit_languages: 12
-          plugin_starlists_only: TC39, Awesome
+          plugin_lines_sections: repositories
+          plugin_lines_repositories_limit: 4
 
       # Repository topics
       - uses: lowlighter/metrics@latest
@@ -139,15 +108,7 @@ jobs:
           base: ""
           plugin_topics: yes
           plugin_topics_mode: icons
-          plugin_topics_limit: 20
-
-      # Repository traffic (requires push access)
-      - uses: lowlighter/metrics@latest
-        with:
-          filename: metrics.plugin.traffic.svg
-          token: ${{ secrets.METRICS_TOKEN }}
-          base: ""
-          plugin_traffic: yes
+          plugin_topics_limit: 15
 
       # Recently starred repositories
       - uses: lowlighter/metrics@latest
@@ -156,7 +117,7 @@ jobs:
           token: ${{ secrets.METRICS_TOKEN }}
           base: ""
           plugin_stars: yes
-          plugin_stars_limit: 6
+          plugin_stars_limit: 4
 
       # Recent activity
       - uses: lowlighter/metrics@latest
@@ -165,24 +126,11 @@ jobs:
           token: ${{ secrets.METRICS_TOKEN }}
           base: ""
           plugin_activity: yes
-          plugin_activity_limit: 8
-          plugin_activity_days: 30
+          plugin_activity_limit: 5
+          plugin_activity_days: 14
           plugin_activity_filter: all
-          plugin_activity_load: 500
           plugin_activity_visibility: public
           plugin_activity_timestamps: yes
-
-      # Reactions on issues and pull requests
-      - uses: lowlighter/metrics@latest
-        with:
-          filename: metrics.plugin.reactions.svg
-          token: ${{ secrets.METRICS_TOKEN }}
-          base: ""
-          plugin_reactions: yes
-          plugin_reactions_limit: 200
-          plugin_reactions_days: 90
-          plugin_reactions_details: count, percentage
-          plugin_reactions_display: absolute
 
       # People plugin - followers and following
       - uses: lowlighter/metrics@latest
@@ -192,18 +140,17 @@ jobs:
           base: ""
           plugin_people: yes
           plugin_people_types: followers, following
-          plugin_people_limit: 24
+          plugin_people_limit: 28
           plugin_people_size: 28
           plugin_people_identicons: no
-          plugin_people_shuffle: yes
 
-      # Sponsors information (if applicable)
-      - uses: lowlighter/metrics@latest
-        with:
-          filename: metrics.plugin.sponsors.svg
-          token: ${{ secrets.METRICS_TOKEN }}
-          base: ""
-          plugin_sponsors: yes
-          plugin_sponsors_sections: goal, list, about
-          plugin_sponsors_past: yes
-          plugin_sponsors_size: 24
+      # WakaTime coding stats (optional - requires WakaTime API key)
+      # Uncomment if you have WakaTime set up
+      # - uses: lowlighter/metrics@latest
+      #   with:
+      #     filename: metrics.plugin.wakatime.svg
+      #     token: NOT_NEEDED
+      #     plugin_wakatime: yes
+      #     plugin_wakatime_token: ${{ secrets.WAKATIME_TOKEN }}
+      #     plugin_wakatime_days: 7
+      #     plugin_wakatime_sections: time, projects, projects-graphs, languages, languages-graphs, editors, os
